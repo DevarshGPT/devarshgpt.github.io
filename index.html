@@ -3,56 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Devarsh GPT - ISC Commerce 24x7</title>
+  <title>ISC Commerce</title>
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f8f9fb; margin:0; padding:0; text-align:center; }
-    header { background:#004aad; color:#fff; padding:25px 10px; }
-    h1 { margin:0; font-size:1.7rem; }
-    p.tagline { margin:8px 0 0; font-size:1.1rem; }
-    main { max-width:600px; margin:20px auto; background:#fff; border-radius:16px; box-shadow:0 2px 10px rgba(0,0,0,0.08); padding:20px; }
-    img.qr { width:200px; border-radius:10px; margin:10px 0; }
-    .phone { font-size:1.1rem; margin-bottom:10px; }
-    .chatbox { text-align:left; border:1px solid #ddd; border-radius:12px; padding:12px; height:260px; overflow-y:auto; background:#fafafa; }
-    .message { margin-bottom:8px; }
-    .bot { color:#004aad; }
-    .user { color:#000; text-align:right; }
-    input { width:80%; padding:8px; border-radius:8px; border:1px solid #ccc; margin-top:10px; }
-    button { padding:8px 14px; border:none; background:#004aad; color:white; border-radius:8px; margin-left:5px; cursor:pointer; }
-    footer { font-size:0.9rem; color:#555; margin:20px 0 30px; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f8f9fb;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 25px 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.7rem;
+    }
+
+    p.tagline {
+      margin: 8px 0 0;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      min-height: 400px; /* gives white space for Chatbase agent */
+    }
+
+    img.qr {
+      width: 200px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .phone {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 20px 0 30px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Devarsh GPT</h1>
-    <p class="tagline">ISC Commerce 24×7 Doubt Assistant</p>
+    <h1>ISC Commerce</h1>
   </header>
 
   <main>
-    <p class="phone"> Contact for Accounts & Commerce: <strong>+91-9619187364</strong></p>
+    <p class="phone">Contact for Accounts & Commerce: <strong>+91-9619187364</strong></p>
     <img src="qr.jpg.jpeg" alt="WhatsApp QR Code" class="qr" />
 
-    <div class="chatbox" id="chatbox">
-      <div class="message bot">👋 Hi! I’m Devarsh GPT. Ask me anything about ISC Commerce.</div>
-    </div>
-    <input type="text" id="userInput" placeholder="Type your question..." />
-    <button onclick="sendMsg()">Send</button>
+    <!-- Empty space for Chatbase Agent -->
+    <div id="chatbase-container" style="height: 400px; background: #fff;"></div>
   </main>
 
   <footer>Created by CA Devarsh Shah | © 2025</footer>
-
-  <script>
-    function sendMsg() {
-      let box = document.getElementById('chatbox');
-      let input = document.getElementById('userInput');
-      if (input.value.trim() === '') return;
-      let userMsg = `<div class="message user">${input.value}</div>`;
-      box.innerHTML += userMsg;
-      let botMsg = `<div class="message bot">I'm still learning! Full AI connection coming soon 🤖</div>`;
-      box.innerHTML += botMsg;
-      input.value = '';
-      box.scrollTop = box.scrollHeight;
-    }
-  </script>
 </body>
 </html>
-
